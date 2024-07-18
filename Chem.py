@@ -23,33 +23,39 @@ CHEM_LINE = {v: k for k, li in CHEM_LINE.items() for v in li}
 while True:
     line = input("Which line are you changing: ").upper()
     if line in CHEM_LINE:
-        line_index = (list(CHEM_LINE).index(line))
-        CHEM_NAME = list(CHEM_LINE.values())[line_index]
+        break
     else:
-        print('Invalid line; enter a valid chemical line: ')
-    break
+        print("Invalid Line")
+
+if line in CHEM_LINE:
+    line_index = (list(CHEM_LINE).index(line))
+    CHEM_NAME = list(CHEM_LINE.values())[line_index]
 
 
 class CHEM_Change:
 
-    TOOL_list = ('ACT01', 'CCT01', 'CCT02', 'RCT03', 'RCT05', 'GCT01', 'GCT02')
-
     def __init__(self):
 
+        LIST_of_TOOL = ['ACT01', 'CCT01', 'CCT02', 'RCT03', 'RCT05', 'GCT01', 'GCT02']
         while True:
             self.TOOL = input('Which tool are you changing: ').upper()
-            if self.TOOL in TOOL_list:
-                pass
+            if self.TOOL in LIST_of_TOOL:
+                break
             else:
-                print('Invalid tool; enter a valid tool: ')
-            break
+                print("Invalid tool: Please use " f"{LIST_of_TOOL}")
 
-        self.num_of_lines = int(input('How many lines are you changing?: '))
         self.EXP_DATE = input('Input the expiration date: ')
-        self.WIINGS_num = input('Copy and paste the WIINGS order #: ')
+        self.WIINGS_num = int(input('Copy and paste the WIINGS order #: '))
         self.BUDDY_name = input('Input your buddy name: ').upper()
         self.BATCH = input('Input the batch number: ').upper()
-        self.LEVEL_TYPE = input('What was the level of the bottle you changed?: ').upper()
+
+        LEVELS = ['PARTIAL', 'NEAR EMPTY', 'EMPTY']
+        while True:
+            self.LEVEL_TYPE = input('What was the level of the bottle you changed?: ').upper()
+            if self.LEVEL_TYPE in LEVELS:
+                break
+            else:
+                print("Invalid chemical levels: Please use: " f"{LEVELS}")
 
     def prompt_script(self):
 
