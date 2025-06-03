@@ -4,7 +4,7 @@ CHEM_LINE = {
     'MES EP500JE 1.9X': ['P53', 'P53B', 'P53C'],
     'SEBP-9012': ['P37', 'P37B'],
     'OEBR-CAP130T4': ['P23'],
-    'MES EP561JE-1.9cp': ['P81'],
+    'MES EP561JE-1.9cP': ['P81', 'P81B'],
     'SEBP-602F': ['P94', 'P94B'],
     'E2 STACK AL9412-302': ['BARC'],
     'SEBN-306F': ['N19', 'N19B'],
@@ -16,6 +16,7 @@ CHEM_LINE = {
     'HM9825U-302.6': ['SARC', 'SARCB'],
     'MES EP900JB-1V2cP': ['P87', 'P87B'],
     'SEBN-1702': ['N23', 'N23B'],
+    'SOC140-6': ['CHM1'],
 }
 
 CHEM_LINE = {v: k for k, li in CHEM_LINE.items() for v in li}
